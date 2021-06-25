@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/dishita/catkin_ws/devel/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/dishita/catkin_ws/src/beginner_tutorials/include/**",
+                "/home/dishita/catkin_ws/src/pcl_task/include/**",
+                "/home/dishita/catkin_ws/src/robotic_arm/include/**",
+                "/home/dishita/catkin_ws/src/task/include/**",
+                "/home/dishita/catkin_ws/src/tasks/include/**",
+                "/usr/include/**",
+                "/usr/include/pcl-1.8",
+                "/opt/ros/melodic/include",
+                "/usr/include/eigen3"
+            ],
+            "name": "ROS",
+            "compilerPath": "/usr/bin/gcc",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

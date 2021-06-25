@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <arg name="world" default="empty"/> 
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find pcl_task)/worlds/pcl1.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find pcl_task)/urdf/pcl_testing.urdf.xacro'"/>
+
+  <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+   args="-urdf -param robot_description -model mybot" />
+
+<!---->
+  <arg name="model" default="$(find pcl_task)/urdf/pcl_testing.urdf.xacro"/>
+  <param name="robot_description" command="cat '$(find pcl_task)/urdf/pcl_testing.urdf.xacro'"/>
+
+<!-- new modification -->
+<arg name="use_gui" default="true" doc="Should the joint_state_publisher use a GUI for controlling joint states" />
+  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen" unless="$(arg use_gui)" />
+ <!-- <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" output="screen" if="$(arg use_gui)" /> -->
+<!-- Combine joint values -->
+ <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" respawn="false" output="screen"/>
+
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find pcl_task)/urdf/pcl_testing.urdf.xacro"/>
+  <param name="use_gui" value="true"/>
+
+<node type="rviz" name="rviz" pkg="rviz" args="-d $(find pcl_task)/rviz/pcl_rviz.rviz"/>
+
+ <node pkg = 'tf' type ='static_transform_publisher' name = 'tf0' args = "0 0 0 -3.14 0 -1.58  kinect_box new_frame 1000"/>-->
+
+
+</launch>
