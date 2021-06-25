@@ -14,16 +14,24 @@
 
 
 ###  Clone Repository
-``` git clone https://github.com/dishitamidha/pcl_clustering.git```
+``` 
+git clone https://github.com/dishitamidha/pcl_clustering.git
+```
 
 ###  Build Workspace
-``` catkin_make ```
+``` 
+catkin_make 
+```
 
 ###  Launch Simulation
-``` roslaunch pcl_task pcl.launch ```
+``` 
+roslaunch pcl_task pcl.launch 
+```
 
 ###  Run PCL clustering node
-``` rosrun pcl_task pcl_task_main ```
+```
+rosrun pcl_task pcl_task_main 
+```
 
 
 
