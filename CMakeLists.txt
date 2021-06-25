@@ -145,10 +145,10 @@ include_directories(
 add_executable(${PROJECT_NAME}_voxel src/voxel_grid.cpp)
 add_executable(${PROJECT_NAME}_passthrough src/passthrough.cpp)
 add_executable(${PROJECT_NAME}_SACsegmentation src/segmentation.cpp)
-add_executable(${PROJECT_NAME}_extraction src/seg_with_extraction.cpp)
-add_executable(${PROJECT_NAME}_extraction2 src/seg_with_extraction2.cpp)
-add_executable(${PROJECT_NAME}_region src/region_growing.cpp)
-add_executable(${PROJECT_NAME}_experiment src/experiment.cpp)
+## add_executable(${PROJECT_NAME}_extraction src/seg_with_extraction.cpp)
+## add_executable(${PROJECT_NAME}_extraction2 src/seg_with_extraction2.cpp)
+## add_executable(${PROJECT_NAME}_region src/region_growing.cpp)
+## add_executable(${PROJECT_NAME}_experiment src/experiment.cpp)
 add_executable(${PROJECT_NAME}_main src/main.cpp)
 
 
@@ -165,10 +165,10 @@ add_executable(${PROJECT_NAME}_main src/main.cpp)
 add_dependencies(${PROJECT_NAME}_voxel ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(${PROJECT_NAME}_passthrough ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(${PROJECT_NAME}_SACsegmentation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(${PROJECT_NAME}_extraction ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(${PROJECT_NAME}_extraction2 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(${PROJECT_NAME}_region ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(${PROJECT_NAME}_experiment ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+##add_dependencies(${PROJECT_NAME}_extraction ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+##add_dependencies(${PROJECT_NAME}_extraction2 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+##add_dependencies(${PROJECT_NAME}_region ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+##add_dependencies(${PROJECT_NAME}_experiment ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(${PROJECT_NAME}_main ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 
@@ -182,18 +182,18 @@ target_link_libraries(${PROJECT_NAME}_passthrough
 target_link_libraries(${PROJECT_NAME}_SACsegmentation
    ${catkin_LIBRARIES}
  ) 
-target_link_libraries(${PROJECT_NAME}_extraction
-   ${catkin_LIBRARIES}
- ) 
-target_link_libraries(${PROJECT_NAME}_extraction2
-   ${catkin_LIBRARIES}
- ) 
-target_link_libraries(${PROJECT_NAME}_region
-   ${catkin_LIBRARIES}
- ) 
-target_link_libraries(${PROJECT_NAME}_experiment
-   ${catkin_LIBRARIES}
- ) 
+ ##target_link_libraries(${PROJECT_NAME}_extraction
+ ##  ${catkin_LIBRARIES}
+ ##) 
+##target_link_libraries(${PROJECT_NAME}_extraction2
+ ##${catkin_LIBRARIES}
+ ##) 
+##target_link_libraries(${PROJECT_NAME}_region
+## ${catkin_LIBRARIES}
+##) 
+##target_link_libraries(${PROJECT_NAME}_experiment
+##${catkin_LIBRARIES}
+##) 
 target_link_libraries(${PROJECT_NAME}_main
    ${catkin_LIBRARIES}
  )
