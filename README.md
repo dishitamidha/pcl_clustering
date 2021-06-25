@@ -15,7 +15,7 @@
 
 ###  Clone Repository
 ``` 
-git clone https://github.com/dishitamidha/pcl_clustering.git
+git clone https://github.com/dishitamidha/pcl_task.git
 ```
 
 ###  Build Workspace
